@@ -58,11 +58,9 @@ if ( $query->have_posts() ) : ?>
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
-				if ( get_post_type() === 'people' ) { // it's a people post, customize result display
-					include 'people.php';
-				} elseif ( $is_policies ) { // it's a polcy
+				if ( $is_policies ) { // it's a polcy
 					include 'policies.php';
-				} else { // not a people post, use default search and filter template
+				} else { 
 					include 'default.php';
 				}
 			} // end while

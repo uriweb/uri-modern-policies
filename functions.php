@@ -82,7 +82,7 @@ add_action( 'display_posts_shortcode_output', 'uri_modern_policies_dps_template_
  * @param str $output string, the original opening markup.
  * @return $output string, the modified opening markup
  */
-function uri_modern_policies_dps_open( $output, $atts, $query ) {
+function uri_modern_policies_dps_open( $output, $atts ) {
 	$output = '<table class="policies-table">
 			<thead>
 			<tr>
@@ -95,7 +95,7 @@ function uri_modern_policies_dps_open( $output, $atts, $query ) {
 ';
 	return $output;
 }
-add_filter( 'display_posts_shortcode_wrapper_open', 'uri_modern_policies_dps_open', 10, 3 );
+add_filter( 'display_posts_shortcode_wrapper_open', 'uri_modern_policies_dps_open', 10, 2 );
 
 /**
  * Customize closing outer markup of Display Posts Shortcode
@@ -105,11 +105,11 @@ add_filter( 'display_posts_shortcode_wrapper_open', 'uri_modern_policies_dps_ope
  * @param str $output string, the original closing markup.
  * @return $output string, the modified closing markup
  */
-function uri_modern_policies_dps_close( $output, $atts, $query ) {
+function uri_modern_policies_dps_close( $output, $atts ) {
 	$output = '</tbody></table>';
 	return $output;
 }
-add_filter( 'display_posts_shortcode_wrapper_close', 'uri_modern_policies_dps_close', 10, 3 );
+add_filter( 'display_posts_shortcode_wrapper_close', 'uri_modern_policies_dps_close', 10, 2 );
 
 
 
