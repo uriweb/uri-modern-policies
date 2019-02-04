@@ -47,7 +47,7 @@ if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICI
 		<?php
 			$format = $GLOBALS['URI_MODERN_POLICIES_DATE_FORMAT'];
 			if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {		
-				the_modified_date( $format, '<td class="updated">', '</td>', TRUE );
+				echo '<td class="created">' . get_the_modified_date( $format ) . '</td>';
 			}
 			if( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
 				echo '<td class="created">' . get_the_date( $format ) . '</td>';
