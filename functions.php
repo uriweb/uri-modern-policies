@@ -68,6 +68,15 @@ function uri_modern_policies_dps_template_part( $output, $atts ) {
 		return $output;
 	}
 
+	if( $atts['include_date_modified'] ) {
+		$GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] = TRUE;
+	}
+	if( $atts['include_date'] ) {
+		$GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] = TRUE;
+	}
+	$GLOBALS['URI_MODERN_POLICIES_DATE_FORMAT'] = $atts['date_format'];
+
+
 	ob_start();
 	get_template_part( 'template-parts/dps', $atts['layout'] );
 	$new_output = ob_get_clean();
@@ -99,6 +108,14 @@ function uri_modern_policies_dps_open( $output, $atts ) {
 				<tr>
 					<th>Policy</th>
 					<th>Category</th>
+					';
+		if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {
+			$output .= '<th>Updated</th>';
+		}
+		if( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
+			$output .= '<th>Created</th>';
+		}
+		$output .= '
 					<th>Procedure</th>
 				</tr>
 				</thead>

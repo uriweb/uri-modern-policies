@@ -6,6 +6,14 @@
  *
  * @package uri-modern
  */
+ 
+$colspan = 3;
+
+if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
+	$colspan++;
+}
+
+ 
 
 ?>
 
@@ -22,7 +30,7 @@
 				echo '</a>';
 			}
 		?>
-		</a></td>
+		</td>
 		
 		<td class="category">
 		<?php
@@ -36,6 +44,17 @@
 		?>
 		</td>
 
+		<?php
+			$format = $GLOBALS['URI_MODERN_POLICIES_DATE_FORMAT'];
+			if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {		
+				the_modified_date( $format, '<td class="updated">', '</td>', TRUE );
+			}
+			if( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
+				echo '<td class="created">' . get_the_date( $format ) . '</td>';
+			}
+		?>
+
+
 		<td class="procedure">
 		<?php
 			$procedure = uri_modern_get_field( 'procedure' );
@@ -48,7 +67,7 @@
 		</td>
 	</tr>
 	<tr class="excerpt">
-		<td colspan="3">
+		<td colspan="<?php echo $colspan; ?>>">
 		<?php
 			$excerpt = get_the_excerpt();
 			echo $excerpt;
