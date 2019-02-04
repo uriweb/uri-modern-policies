@@ -32,6 +32,15 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_policies_enqueues' );
 function uri_modern_policies_redirect_posts_to_search() {
 
   if ( is_single() && 'post' == get_post_type() ) {
+  
+  	// redirect to a search result
+  	// use the default wp search query string
+  	// unless search and filter is installed, in which case, use that.
+  	$qs = '?s=';
+  	if ( function_exists( 'activate_search_filter' ) || class_exists( 'SearchAndFilter' ) ) {
+	  	$qs = '?_sf_s=';
+  	}
+  
 		$title = get_the_title();
 		$url = get_site_url() . '?_sf_s=' . urlencode( $title );
 		wp_redirect( $url );
@@ -49,18 +58,18 @@ add_action( 'template_redirect', 'uri_modern_policies_redirect_posts_to_search' 
  * @see https://www.billerickson.net/template-parts-with-display-posts-shortcode
  *
  * @param string $output current output of post.
- * @param array  $original_atts original attributes passed to shortcode.
+ * @param array  $atts original attributes passed to shortcode.
  * @return string $output
  */
-function uri_modern_policies_dps_template_part( $output, $original_atts ) {
+function uri_modern_policies_dps_template_part( $output, $atts ) {
 
-	// Return early if our "layout" attribute is not specified
-	if ( empty( $original_atts['layout'] ) ) {
+	// Return early if our "layout" attribute is not "policies"
+	if ( empty( $atts['layout']  ) || 'policies' !== $atts['layout'] ) {
 		return $output;
 	}
 
 	ob_start();
-	get_template_part( 'template-parts/dps', $original_atts['layout'] );
+	get_template_part( 'template-parts/dps', $atts['layout'] );
 	$new_output = ob_get_clean();
 
 	$output = $new_output;
@@ -83,16 +92,20 @@ add_action( 'display_posts_shortcode_output', 'uri_modern_policies_dps_template_
  * @return $output string, the modified opening markup
  */
 function uri_modern_policies_dps_open( $output, $atts ) {
-	$output = '<table class="policies-table">
-			<thead>
-			<tr>
-				<th>Policy</th>
-				<th>Category</th>
-				<th>Procedure</th>
-			</tr>
-			</thead>
-		<tbody>
-';
+
+	if ( ! empty( $atts['layout']  ) && 'policies' === $atts['layout'] ) {
+		$output = '<table class="policies-table">
+				<thead>
+				<tr>
+					<th>Policy</th>
+					<th>Category</th>
+					<th>Procedure</th>
+				</tr>
+				</thead>
+			<tbody>
+		';
+	}
+
 	return $output;
 }
 add_filter( 'display_posts_shortcode_wrapper_open', 'uri_modern_policies_dps_open', 10, 2 );
@@ -106,23 +119,11 @@ add_filter( 'display_posts_shortcode_wrapper_open', 'uri_modern_policies_dps_ope
  * @return $output string, the modified closing markup
  */
 function uri_modern_policies_dps_close( $output, $atts ) {
-	$output = '</tbody></table>';
+	if ( ! empty( $atts['layout']  ) && 'policies' === $atts['layout'] ) {
+		$output = '</tbody></table>';
+	}
 	return $output;
 }
 add_filter( 'display_posts_shortcode_wrapper_close', 'uri_modern_policies_dps_close', 10, 2 );
 
 
-
-
-/**
- * Display Posts Output Filter
- *
- * @see https://displayposts.com/docs/the-output-filter/
- */
-// function uri_modern_policies_dps_output_customization( $output, $original_atts, $image, $title, $date, $excerpt, $inner_wrapper, $content, $class, $author, $category_display_text ) {
-//
-// $output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' . $image . $title . $date . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';
-//
-// return $output;
-// }
-// add_filter( 'display_posts_shortcode_output', 'uri_modern_policies_dps_output_customization', 10, 11 );
