@@ -19,7 +19,7 @@ URI Modern Policies is a WordPress theme designed for the URI policies database.
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea30791b1ae849db88d75fd54a68b5f3)](https://www.codacy.com/app/uriweb/uri-modern-policies?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern-policies&amp;utm_campaign=Badge_Grade)
 [![devDependencies Status](https://david-dm.org/uriweb/uri-modern-policies/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern-policies?type=dev)
 
-Contributors: Brandon Fuller  
+Contributors: Brandon Fuller, John Pennypacker  
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 4.9  
