@@ -6,14 +6,14 @@
  *
  * @package uri-modern
  */
- 
+
 $colspan = 3;
 
-if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
+if ( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
 	$colspan++;
 }
 
- 
+
 
 ?>
 
@@ -23,11 +23,11 @@ if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICI
 			$title = get_the_title();
 			$policy = uri_modern_get_field( 'policy' );
 			if ( $policy ) {
-				echo '<a href="' . $policy . '">';
+			echo '<a href="' . $policy . '">';
 			}
 			echo $title;
 			if ( $policy ) {
-				echo '</a>';
+			echo '</a>';
 			}
 		?>
 		</td>
@@ -38,7 +38,7 @@ if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICI
 			$cats = array();
 			$categories = get_the_category();
 			foreach ( $categories as $c ) {
-				$cats[] = $c->name;
+			$cats[] = $c->name;
 			}
 			echo implode( ',', $cats );
 		?>
@@ -46,11 +46,11 @@ if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICI
 
 		<?php
 			$format = $GLOBALS['URI_MODERN_POLICIES_DATE_FORMAT'];
-			if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {		
-				echo '<td class="created">' . get_the_modified_date( $format ) . '</td>';
+			if ( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {
+			echo '<td class="created">' . get_the_modified_date( $format ) . '</td>';
 			}
-			if( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
-				echo '<td class="created">' . get_the_date( $format ) . '</td>';
+			if ( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
+			echo '<td class="created">' . get_the_date( $format ) . '</td>';
 			}
 		?>
 
@@ -59,9 +59,9 @@ if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] || $GLOBALS['URI_MODERN_POLICI
 		<?php
 			$procedure = uri_modern_get_field( 'procedure' );
 			if ( $procedure ) {
-				echo '<a href="' . $procedure . '">';
-				echo 'Procedure';
-				echo '</a>';
+			echo '<a href="' . $procedure . '">';
+			echo 'Procedure';
+			echo '</a>';
 			}
 		?>
 		</td>

@@ -32,15 +32,15 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_policies_enqueues' );
 function uri_modern_policies_redirect_posts_to_search() {
 
   if ( is_single() && 'post' == get_post_type() ) {
-  
-  	// redirect to a search result
-  	// use the default wp search query string
-  	// unless search and filter is installed, in which case, use that.
-  	$qs = '?s=';
-  	if ( function_exists( 'activate_search_filter' ) || class_exists( 'SearchAndFilter' ) ) {
-	  	$qs = '?_sf_s=';
-  	}
-  
+
+		// redirect to a search result
+		// use the default wp search query string
+		// unless search and filter is installed, in which case, use that.
+		$qs = '?s=';
+		if ( function_exists( 'activate_search_filter' ) || class_exists( 'SearchAndFilter' ) ) {
+			$qs = '?_sf_s=';
+			}
+
 		$title = get_the_title();
 		$url = get_site_url() . '?_sf_s=' . urlencode( $title );
 		wp_redirect( $url );
@@ -64,18 +64,17 @@ add_action( 'template_redirect', 'uri_modern_policies_redirect_posts_to_search' 
 function uri_modern_policies_dps_template_part( $output, $atts ) {
 
 	// Return early if our "layout" attribute is not "policies"
-	if ( empty( $atts['layout']  ) || 'policies' !== $atts['layout'] ) {
+	if ( empty( $atts['layout'] ) || 'policies' !== $atts['layout'] ) {
 		return $output;
 	}
 
-	if( $atts['include_date_modified'] ) {
-		$GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] = TRUE;
+	if ( $atts['include_date_modified'] ) {
+		$GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] = true;
 	}
-	if( $atts['include_date'] ) {
-		$GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] = TRUE;
+	if ( $atts['include_date'] ) {
+		$GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] = true;
 	}
 	$GLOBALS['URI_MODERN_POLICIES_DATE_FORMAT'] = $atts['date_format'];
-
 
 	ob_start();
 	get_template_part( 'template-parts/dps', $atts['layout'] );
@@ -102,17 +101,17 @@ add_action( 'display_posts_shortcode_output', 'uri_modern_policies_dps_template_
  */
 function uri_modern_policies_dps_open( $output, $atts ) {
 
-	if ( ! empty( $atts['layout']  ) && 'policies' === $atts['layout'] ) {
+	if ( ! empty( $atts['layout'] ) && 'policies' === $atts['layout'] ) {
 		$output = '<table class="policies-table">
 				<thead>
 				<tr>
 					<th>Policy</th>
 					<th>Category</th>
 					';
-		if( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {
+		if ( $GLOBALS['URI_MODERN_POLICIES_TABLE_UPDATED'] ) {
 			$output .= '<th>Updated</th>';
 		}
-		if( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
+		if ( $GLOBALS['URI_MODERN_POLICIES_TABLE_CREATED'] ) {
 			$output .= '<th>Created</th>';
 		}
 		$output .= '
@@ -136,7 +135,7 @@ add_filter( 'display_posts_shortcode_wrapper_open', 'uri_modern_policies_dps_ope
  * @return $output string, the modified closing markup
  */
 function uri_modern_policies_dps_close( $output, $atts ) {
-	if ( ! empty( $atts['layout']  ) && 'policies' === $atts['layout'] ) {
+	if ( ! empty( $atts['layout'] ) && 'policies' === $atts['layout'] ) {
 		$output = '</tbody></table>';
 	}
 	return $output;

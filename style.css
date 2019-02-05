@@ -3,16 +3,17 @@ Theme Name: URI Modern Policies
 Theme URI: https://www.uri.edu
 Author: University of Rhode Island
 Author URI: https://today.uri.edu
-Description: URI Modern Policies is a WordPress theme designed for the URI policies database.  All it does is faceted search.
+Description: URI Modern Policies is a WordPress theme designed for the URI policies database.  All it does is faceted search.  It is a child theme of URI Modern.
 Template: uri-modern
-Version: 1.0.0
+Version: 0.1.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: uri
 Tags: education, theme-options
 
-@version v1.0.0
+@version v0.1.0
 @author Brandon Fuller <bjcfuller@uri.edu>
+@author John Pennypacker <jpennypacker@uri.edu>
 
 */
 form.searchandfilter{background-color:#eee;border-radius:3px;font-family:"Hind",Arial,sans-serif;padding:0 1rem 1rem}form.searchandfilter h4{color:#000}form.searchandfilter ul{margin-left:0}form.searchandfilter ul li{display:inline-block;vertical-align:middle;margin:0 !important;width:100%}form.searchandfilter ul li input,form.searchandfilter ul li select{width:95%}form.searchandfilter ul li label{display:block;width:95%}form.searchandfilter select{border:1px solid #aaa;border-radius:0;background:#fff url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;font-size:1rem;padding:.5rem 2rem .5rem .5rem;appearance:none;-moz-appearance:none;-webkit-appearance:none}form.searchandfilter option{font-size:1em}.sf-input-text{border:1px solid #aaa;display:block;font-size:1rem;padding:.5em}@media screen and (min-width: 600px){.searchandfilter li{display:inline-block;width:50%}}@media screen and (min-width: 800px){.searchandfilter li.sf-field-search{width:70%}.searchandfilter li.sf-field-category{width:30%}}table.policies-table{width:100%}table.policies-table tr:nth-child(4n+3){background-color:#eee}table.policies-table tr:nth-child(4n+2){background-color:#fafafa}table.policies-table tr:nth-child(4n+4){background-color:#eee}table.policies-table th{color:#fff}table.policies-table>div{margin-top:2rem}table.policies-table h2{margin-bottom:1rem}table.policies-table p>br{display:none}table.policies-table ul.post-categories{display:none}tr.excerpt{font-size:.9rem;line-height:1.5}.excerpt-hidden{display:none}.excerpt-toggler{display:inline-block;font-size:0}.excerpt-toggler:after{background-color:#555;border-radius:50%;color:#fff;content:"?";display:block;font-size:1rem;font-weight:bold;height:1.2em;line-height:1.4em;margin-left:.5em;text-align:center;width:1.2em}.results-meta{font-family:"Hind", Arial, sans-serif;font-size:.9rem;margin:1rem 0}.display-posts-listing .date{font-family:Lato, sans-serif;font-size:.8rem}ul.display-posts-listing li.listing-item .category-display .category-display-label{color:#555;font-family:Lato, sans-serif;font-size:.8rem;display:inline}.ll-policies .separator{display:none}.policies-table th{color:#000}.policies-table th,.policies-table td{padding:1em}.dataTables_wrapper label{display:inline-block;font-family:hind;font-size:1rem;margin-bottom:1rem}.dataTables_length{float:right}.dataTables_filter{float:left}

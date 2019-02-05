@@ -60,7 +60,7 @@ if ( $query->have_posts() ) : ?>
 
 				if ( $is_policies ) { // it's a polcy
 					include 'policies.php';
-				} else { 
+				} else {
 					include 'default.php';
 				}
 			} // end while
