@@ -14,8 +14,9 @@ URI Modern Policies is a WordPress theme designed for the URI policies database.
 
 [![GitHub release](https://img.shields.io/github/release/uriweb/uri-modern-policies.svg)](https://github.com/uriweb/uri-modern-policies/releases/latest)
 [![GitHub Release Date](https://img.shields.io/github/release-date/uriweb/uri-modern-policies.svg)](https://github.com/uriweb/uri-modern-policies/releases/latest)
-[![Master Build Status](https://travis-ci.org/uriweb/uri-modern-policies.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern-policies)
+[![Master Build Status](https://travis-ci.com/uriweb/uri-modern-policies.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern-policies)
 [![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern-policies/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern-policies/overview/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea30791b1ae849db88d75fd54a68b5f3)](https://www.codacy.com/app/uriweb/uri-modern-policies?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern-policies&amp;utm_campaign=Badge_Grade)
 [![devDependencies Status](https://david-dm.org/uriweb/uri-modern-policies/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern-policies?type=dev)
 
 Contributors: Brandon Fuller  
