@@ -4,6 +4,6 @@
     "excludeFiles": [
         "gulpfile.js",
         "js/script.min.js",
-		"features"
+		"js/policies-script.min.js"
     ]
 }
