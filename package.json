@@ -1,7 +1,7 @@
 {
   "name": "uri-modern-policies",
   "version": "1.0.0",
-  "description": "URI Modern Policies is a WordPress theme designed for the URI policies database.  All it does is faceted search.",
+  "description": "URI Modern Policies is a WordPress theme designed for the URI policies database.  All it does is faceted search.  It is a child theme of URI Modern.",
   "themeName": "URI Modern Policies",
   "textDomain": "uri",
   "template": "uri-modern",
@@ -9,14 +9,17 @@
   "homepage": "https://www.uri.edu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uriweb/uri-modern-home.git"
+    "url": "https://github.com/uriweb/uri-modern-policies.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "University of Rhode Island",
-  "authorHuman": "Brandon Fuller <bjcfuller@uri.edu>",
   "authorURI": "https://today.uri.edu",
+  "humans": [
+    "Brandon Fuller <bjcfuller@uri.edu>",
+    "John Pennypacker <jpennypacker@uri.edu>"
+  ],
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
