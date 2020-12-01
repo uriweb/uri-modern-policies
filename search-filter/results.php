@@ -45,7 +45,8 @@ if ( $query->have_posts() ) : ?>
 			<?php if ( $is_policies ) : ?>
 			<thead>
 			<tr>
-				<th>Policy</th>
+				<th>Policy Name</th>
+				<th>Policy Number</th>
 				<th>Category</th>
 				<th>Procedure</th>
 			</tr>

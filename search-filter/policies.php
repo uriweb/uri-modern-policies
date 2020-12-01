@@ -23,6 +23,15 @@
 		?>
 		</a></td>
 		
+		<td class="policy-number">
+		<?php
+			$policy_number = uri_modern_get_field( 'policy_number' );
+			if ( $policy_number ) {
+				echo '<span class="policy-numer">' . $policy_number . '</span>';
+			}
+		?>
+		</td>
+
 		<td class="category">
 		<?php
 			// the_category(',');
@@ -47,7 +56,7 @@
 		</td>
 	</tr>
 	<tr class="excerpt">
-		<td colspan="3">
+		<td colspan="4">
 		<?php
 			$excerpt = get_the_excerpt();
 			echo uri_modern_result_highlight( $excerpt, $search );
