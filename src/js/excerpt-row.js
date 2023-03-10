@@ -11,7 +11,6 @@
 
 		// Add an toggler widget to each row
 		$( 'td.policy' ).each(
-
 			function() {
 
 				var excerpt = $( this ).parents( 'tr' ).next();
