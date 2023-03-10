@@ -1,6 +1,6 @@
 {
   "name": "uri-modern-policies",
-  "version": "1.1",
+  "version": "1.2",
   "description": "URI Modern Policies is a WordPress theme designed for the URI policies database.  All it does is faceted search.  It is a child theme of URI Modern.",
   "themeName": "URI Modern Policies",
   "textDomain": "uri",
